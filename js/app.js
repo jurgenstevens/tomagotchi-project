@@ -1,11 +1,12 @@
 console.log("Tomagotchi project");
 
 class Tomagotchi {
-	constructor(name, age, eyes){
+	constructor(name, age, eyes, mouth,){
 		this.legs = 2;
 		this.arms = 2;
 		this.name = name;
 		this.eyes = eyes;
+		this.mouth = mouth;
 	}
 	setName(tamagotchiName){
 		this.name = tamagotchiName;
@@ -13,8 +14,9 @@ class Tomagotchi {
 	greet(playerName){
 		console.log('Hello ' + playerName + '! I\'m ' + tamagotchiName + '!');
 	}
-
-
+	putToSleep(closeeyes){
+		this.eyes = closeeyes
+	}
 };
 
 
@@ -23,16 +25,14 @@ const game = {
 // Create the functions (giveFood, flipTheSwitch, playWith) 
 	giveFood(){
 
-	}
+	},
 
 	flipTheSwitch(){
 
-	}
+	},
 	playWith(){
 
-	}
-
-
+	},
 // and connnect
 
 
