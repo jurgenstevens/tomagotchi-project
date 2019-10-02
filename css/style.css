@@ -1,4 +1,8 @@
 body{
-	background-color: navy;
-	color: lightgray;
+	background-color: white;
+	color: pink;
+}
+.logo{
+	position: absolute;
+	left: 275px;
 }
