@@ -1,21 +1,22 @@
-console.log("Tomagotchi project");
+console.log("Tamagotchi project");
 
-class Tomagotchi {
-	constructor(name, age, eyes, mouth,){
+class Tamagotchi {
+	constructor(name, age, hungry, bored){
 		this.legs = 2;
 		this.arms = 2;
 		this.name = name;
 		this.eyes = eyes;
-		this.mouth = mouth;
+		this.hungry = null;
+		this.bored = null;
 	}
-	setName(tamagotchiName){
-		this.name = tamagotchiName;
+	
+	greet(tamagotchiName){
+		console.log('Hello! I\'m ' + tamagotchiName + '!');
 	}
-	greet(playerName){
-		console.log('Hello ' + playerName + '! I\'m ' + tamagotchiName + '!');
-	}
+
 	putToSleep(closeeyes){
-		this.eyes = closeeyes
+		this.eyes = closeeyes;
+		console.log('Yawn...');
 	}
 };
 
@@ -23,16 +24,20 @@ class Tomagotchi {
 const game = {
 // Time causes it to change. Stays within the game
 // Create the functions (giveFood, flipTheSwitch, playWith) 
-	giveFood(){
+	// setInterval(() { 
+	// 	console.log("Hello"); 
+	// }, 30000);
 
-	},
+	// giveFood(){
 
-	flipTheSwitch(){
+	// },
 
-	},
-	playWith(){
+	// flipTheSwitch(){
 
-	},
+	// },
+	// playWith(){
+
+	// },
 // and connnect
 
 
@@ -40,6 +45,11 @@ const game = {
 };
 
 // Listeners
-$().on(click.) => {}
-$().on(click.) => {}
-$().on(click.) => {}
+$('form').on('submit', (e) => {
+	console.log('Clicked! Woo!');
+	console.log( $('#input-box').val());
+	e.preventDefault();
+});
+// $().on(click.) => {}
+// $().on(click.) => {}
+// $().on(click.) => {}
