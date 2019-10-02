@@ -1,6 +1,18 @@
 console.log("Tomagotchi project");
 
 class Tomagotchi {
+	constructor(name, age, eyes){
+		this.legs = 2;
+		this.arms = 2;
+		this.name = name;
+		this.eyes = eyes;
+	}
+	setName(tamagotchiName){
+		this.name = tamagotchiName;
+	}
+	greet(playerName){
+		console.log('Hello ' + playerName + '! I\'m ' + tamagotchiName + '!');
+	}
 
 
 };
