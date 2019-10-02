@@ -25,17 +25,35 @@ class Tamagotchi {
 
 
 const game = {
-	makeTamagotchi(tamaName) {
-		const tamagotchi = new Tamagotchi(tamaName);
-			console.log('Hello! My name is ' + tamaName + '!');
-			setInterval((){
 
-		})
+	theTama: null, 
+
+	time: 0, 
+
+	makeTamagotchi(tamaName) {
+
 		// instantiate the Tama class, pass in tamaName
+		const tamagotchi = new Tamagotchi(tamaName);
+
+		console.log(tamagotchi);
+
+		this.theTama = tamagotchi;
+
+		this.startTimer();
 		// so that your instance will ahve that name
 		// console.log the instantiated object to check
-		}
+	},
+
+	startTimer() {
+		
+		const tamagotchiTimer = setInterval( () => {
+
+			console.log('Hello. Your ', this, ' is awake!');
+		}, 1000);
+
 	}
+
+}
 
 
 
