@@ -5,9 +5,10 @@ class Tamagotchi {
 		this.legs = 2;
 		this.arms = 2;
 		this.name = name;
-		this.hungry = 0;
-		this.bored = 0;
-		this.age = 0;
+		this.hunger = null;
+		this.boredom = null;
+		this.age = null;
+		this.sleepiness = null;
 		// this.eyes = eyes;
 	}
 	
@@ -26,9 +27,10 @@ class Tamagotchi {
 
 const game = {
 
-	theTama: [], 
+	theTama: null, 
 
 	time: 0, 
+
 
 	makeTamagotchi(tamaName) {
 
@@ -49,16 +51,18 @@ const game = {
 		const $boredom = $('#boredom');
 		const tamagotchiTimer = setInterval( () => {
 			this.time++
-			// this.Tamagotchi.timer = 1;
-			// this.Tamagotchi.age += .5;
-			// this.Tamagotchi.hunger += 1;
-			// this.Tamagotchi.sleepiness += 1;
-			// this.Tamagotchi.boredom += 2;
-			$timer.text(`timer: ${this.time}s`)
+			this.theTama.age += .5;
+			this.theTama.hunger += 1;
+			this.theTama.sleepiness += 1;
+			this.theTama.boredom += 2;
+			$timer.text(`TIMER: ${this.time}s`)
+			$age.text(`AGE: ${this.theTama.age}`)
+			$hunger.text(`HUNGER: ${this.theTama.hunger}`)
+			$sleepiness.text(`SLEEPINES: ${this.theTama.sleepiness}`)
+			$boredom.text(`BOREDOM: ${this.theTama.boredom}`)
 			console.log('Looped!');
 		}, 1000);
-		this.time = tamagotchiTimer;
-
+		// this.time = tamagotchiTimer;
 	},
 	// feedTamagatchi(){
 
