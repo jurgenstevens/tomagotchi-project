@@ -33,33 +33,43 @@ const game = {
 	},
 
 	startTimer() {
-		const $timer = $('#timer');
-		const $age = $('#age');
-		const $hunger = $('#hunger');
-		const $sleepiness = $('#sleepiness');
-		const $boredom = $('#boredom');
+		
 		const tamagotchiTimer = setInterval( () => {
 			this.time++
-			this.theTama.age += 1;
-			this.theTama.boredom += 1;
-			this.theTama.hunger += 1;
-			this.theTama.sleepiness += 1;
-			$timer.text(`TIMER: ${Math.floor(this.time)}s`)
-			$age.text(`AGE: ${Math.floor(this.theTama.age)}`)
-			$hunger.text(`HUNGER: ${Math.floor(this.theTama.hunger)}`)
-			$sleepiness.text(`SLEEPINES: ${Math.floor(this.theTama.sleepiness)}`)
-			$boredom.text(`BOREDOM: ${Math.floor(this.theTama.boredom)}`)
-			// console.log('Looped!');
+			this.theTama.age += .2;
+			this.theTama.boredom += .8;
+			this.theTama.hunger += .6;
+			this.theTama.sleepiness += .4;
+			// let the user know values have changed
+			this.printStats()
+			
 		}, 1000);
 		this.time = tamagotchiTimer;
 	},
 	
 	feedTamagatchi(){
 		this.theTama.hunger -= .5;
+		this.printStats()
+	},
+
+	// this function prints stats -- shows the user the values for hunger, sleepiness, age, bordedom, time, 
+	// call it to notify the user whenever the values change
+	printStats() {
+		const $timer = $('#timer');
+		const $age = $('#age');
+		const $hunger = $('#hunger');
+		const $sleepiness = $('#sleepiness');
+		const $boredom = $('#boredom');
+		$timer.text(`TIMER: ${this.time}s`)
+		$age.text(`AGE: ${this.theTama.age}`)
+		$hunger.text(`HUNGER: ${this.theTama.hunger.toFixed(1)}`)
+		$sleepiness.text(`SLEEPINES: ${this.theTama.sleepiness}`)
+		$boredom.text(`BOREDOM: ${this.theTama.boredom}`)
 	},
 
 	playWithTamagotchi(){
 		this.theTama.boredom -= .8;
+		this.printStats()
 	},
 
 	goToSleepTamagotchi(){
@@ -89,7 +99,7 @@ const game = {
 // Listeners
 $('form').on('submit', (e) => {
 	e.preventDefault();
-	console.log('Clicked! Woo!');
+	// console.log('Clicked! Woo!');
 	console.log( $('#input-box').val() );
 	const tamaName = $('#input-box').val();
 	game.makeTamagotchi(tamaName)
