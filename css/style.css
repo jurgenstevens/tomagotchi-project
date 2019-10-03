@@ -20,21 +20,55 @@ body{
 }
 #feedTamagotchi {
 	border-radius: 50%;
+	height: 40px;
+  	width: 40px;
 	background-color: blue;
 	color: white;
+	position: absolute;
+	bottom: 174px;
+	left: 398px;
 }
 #playWithTamagotchi {
 	border-radius: 50%;
+	height: 40px;
+  	width: 40px;
 	background-color: green;
 	color: white;
+	position: absolute;
+	bottom: 150px;
+	left: 473px;
 }
 #goToSleep {
 	border-radius: 50%;
+	height: 40px;
+  	width: 40px;
 	background-color: black;
 	color: white;
+	position: absolute;
+	bottom: 174px;
+	left: 548px;
+	text-align: center;
 }
 #wakeUp{
 	border-radius: 50%;
+	height: 45px;
+  	width: 45px;
 	background-color: white;
 	color: black;
+	position: absolute;
+	bottom: 190px;
+	left: 600px;
+	border: 4px solid black;
+
 }
+
+
+
+
+
+
+
+
+
+
+
