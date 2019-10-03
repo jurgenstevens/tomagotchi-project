@@ -51,15 +51,15 @@ const game = {
 		const $boredom = $('#boredom');
 		const tamagotchiTimer = setInterval( () => {
 			this.time++
-			this.theTama.age += .5;
-			this.theTama.hunger += 1;
-			this.theTama.sleepiness += 1;
-			this.theTama.boredom += 2;
-			$timer.text(`TIMER: ${this.time}s`)
-			$age.text(`AGE: ${this.theTama.age}`)
-			$hunger.text(`HUNGER: ${this.theTama.hunger}`)
-			$sleepiness.text(`SLEEPINES: ${this.theTama.sleepiness}`)
-			$boredom.text(`BOREDOM: ${this.theTama.boredom}`)
+			this.theTama.age += .2;
+			this.theTama.hunger += .6;
+			this.theTama.sleepiness += .4;
+			this.theTama.boredom += .8;
+			$timer.text(`TIMER: ${Math.floor(this.time)}s`)
+			$age.text(`AGE: ${Math.floor(this.theTama.age)}`)
+			$hunger.text(`HUNGER: ${Math.floor(this.theTama.hunger)}`)
+			$sleepiness.text(`SLEEPINES: ${Math.floor(this.theTama.sleepiness)}`)
+			$boredom.text(`BOREDOM: ${Math.floor(this.theTama.boredom)}`)
 			console.log('Looped!');
 		}, 1000);
 		// this.time = tamagotchiTimer;
@@ -68,9 +68,13 @@ const game = {
 
 	// },
 
-	// flipTheSwitch(){
+	// goToSleep(){
 
 	// },
+
+	// wakeUp(){
+
+		// }
 	// playWith(){
 
 	// },
@@ -99,7 +103,6 @@ $('form').on('submit', (e) => {
 	game.makeTamagotchi(tamaName)
 	// call the make tamagatchi method in the game object
 	// pass in tamaName as a parameter
-
 });
 
 // $('#start').on('click', (e) => {
