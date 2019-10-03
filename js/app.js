@@ -62,22 +62,24 @@ const game = {
 			$boredom.text(`BOREDOM: ${Math.floor(this.theTama.boredom)}`)
 			console.log('Looped!');
 		}, 1000);
-		// this.time = tamagotchiTimer;
+		this.time = tamagotchiTimer;
 	},
-	// feedTamagatchi(){
+	
+	feedTamagatchi(){
 
-	// },
+	},
 
-	// goToSleep(){
+	playWithTamagotchi(){
 
-	// },
+	},
 
-	// wakeUp(){
+	goToSleepTamagotchi(){
 
-		// }
-	// playWith(){
+	},
 
-	// },
+	wakeUpTamagotchi(){
+
+		}
 }
 
 
@@ -105,14 +107,23 @@ $('form').on('submit', (e) => {
 	// pass in tamaName as a parameter
 });
 
-// $('#start').on('click', (e) => {
-// 	console.log('Let\'s begin.');
-// 	e.preventDefault();
-// });
+$('#feedTamagotchi').on('click', () => {
+	console.log('Feed Tamagotchi is working!');
+	game.feedTamagatchi();
+})
 
-// $().on(click.) => {}
-// $().on(click.) => {}
-// $().on(click.) => {}
+$('#playWithTamagotchi').on('click', () => {
+	console.log('Play with Tamagotchi');
+	game.playWithTamagotchi();
+})
+$('#goToSleep').on('click', () => {
+	console.log('Put him to sleep!');
+	game.goToSleepTamagotchi();
+})
+$('#wakeUp').on('click', () => {
+	console.log('Wake his a** up!');	
+	game.wakeUpTamagotchi();
+})
 
 
 
