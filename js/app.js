@@ -11,16 +11,6 @@ class Tamagotchi {
 		this.sleepiness = null;
 		// this.eyes = eyes;
 	}
-	
-	// greet(tamagotchiName){
-	// 	console.log('Hello! I\'m ' + tamagotchiName + '!');
-	// }
-
-	// putToSleep(closeeyes){
-	// 	this.eyes = closeeyes;
-	// 	console.log('Yawn...');
-	// }
-
 }
 
 
@@ -28,7 +18,6 @@ class Tamagotchi {
 const game = {
 
 	theTama: null, 
-
 	time: 0, 
 
 
@@ -51,50 +40,51 @@ const game = {
 		const $boredom = $('#boredom');
 		const tamagotchiTimer = setInterval( () => {
 			this.time++
-			this.theTama.age += .2;
-			this.theTama.hunger += .6;
-			this.theTama.sleepiness += .4;
-			this.theTama.boredom += .8;
+			this.theTama.age += 1;
+			this.theTama.boredom += 1;
+			this.theTama.hunger += 1;
+			this.theTama.sleepiness += 1;
 			$timer.text(`TIMER: ${Math.floor(this.time)}s`)
 			$age.text(`AGE: ${Math.floor(this.theTama.age)}`)
 			$hunger.text(`HUNGER: ${Math.floor(this.theTama.hunger)}`)
 			$sleepiness.text(`SLEEPINES: ${Math.floor(this.theTama.sleepiness)}`)
 			$boredom.text(`BOREDOM: ${Math.floor(this.theTama.boredom)}`)
-			console.log('Looped!');
+			// console.log('Looped!');
 		}, 1000);
 		this.time = tamagotchiTimer;
 	},
 	
 	feedTamagatchi(){
-
+		this.theTama.hunger -= .5;
 	},
 
 	playWithTamagotchi(){
-
+		this.theTama.boredom -= .8;
 	},
 
 	goToSleepTamagotchi(){
-
+		this.theTama.sleepiness -= .4;
+		// 	
+		// $('body').css()({
+		// 		'background-color' : 'white',
+		// 		'opacity': '.5'
+		// })
 	},
-
 	wakeUpTamagotchi(){
-
-		}
+		$('body').css({
+			'background-color': 'white',
+			'opacity': ''
+		})
+	},
+	// evolveTamagotchi(){
+	// 	if(){ //if tamagotchi hits a certain age (14) it evolves to
+	// 		// a different one
+	// 	} if else{ // if it hits a higher age (25) it evolves to an
+	// 		// even bigger one
+	// 	}
+	// },
 }
 
-
-
-
-// Time causes it to change. Stays within the game
-// Create the functions (giveFood, flipTheSwitch, playWith) 
-	// setInterval(() { 
-	// 	console.log("Hello"); 
-	// }, 30000);
-// and connnect
-
-
-
-// };
 
 // Listeners
 $('form').on('submit', (e) => {
