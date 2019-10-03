@@ -46,7 +46,7 @@ const game = {
 			if (this.theTama.age >= 4){
 				$('.crash-bored').attr("src", "crash-images/crash-spin.gif").css('top', '232px');
 			};
-			if (this.theTama.age >= 10){
+			if (this.theTama.age >= 8){
 				$('.crash-bored').attr("src", "crash-images/crash-bored.gif").css('top', '232px');
 			};
 			// Crash/Tamagotchi Dies
