@@ -112,7 +112,7 @@ const game = {
 
 	endGame() {
 		console.log("GAME OVER");
-		$('.crash-bored').attr("src", "crash-images/crash-sad.gif").css('top', '232px');
+		$('.crash-bored').attr("src", "crash-images/crash-dies02.gif").css('top', '232px');
 	}
 }
 
