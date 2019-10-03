@@ -6,8 +6,35 @@ body{
 	position: absolute;
 	left: 275px;
 }
-.crash-bored{
+.crash-bored {
 	position: absolute;
 	left: 398px;
 	top: 250px;
+	width: 190px;
+	height: 190px;
+}
+#stats {
+	position: absolute;
+	left: 50px;
+	top: 50px;
+}
+#feedTamagotchi {
+	border-radius: 50%;
+	background-color: blue;
+	color: white;
+}
+#playWithTamagotchi {
+	border-radius: 50%;
+	background-color: green;
+	color: white;
+}
+#goToSleep {
+	border-radius: 50%;
+	background-color: black;
+	color: white;
+}
+#wakeUp{
+	border-radius: 50%;
+	background-color: white;
+	color: black;
 }

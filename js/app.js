@@ -41,15 +41,25 @@ const game = {
 			this.theTama.hunger += .6;
 			this.theTama.sleepiness += .4;
 			// let the user know values have changed
-			this.printStats()
+			this.printStats();
+			// Evolution
+			if (this.theTama.age >= 4){
+				$('.crash-bored').attr("src", "crash-images/crash-spin.gif").css('top', '232px');
+			};
+			if (this.theTama.age >= 10){
+				$('.crash-bored').attr("src", "crash-images/crash-bored.gif").css('top', '232px');
+			};
+			// Crash/Tamagotchi Dies
+			if (this.theTama.sleepiness >= 10){
+				this.endGame();
+				clearInterval(tamagotchiTimer);
+			};
+			// if any of the values are >= 10
+				// stop interval
+				// this.endGame()
 			
 		}, 1000);
 		this.time = tamagotchiTimer;
-	},
-	
-	feedTamagatchi(){
-		this.theTama.hunger -= .5;
-		this.printStats()
 	},
 
 	// this function prints stats -- shows the user the values for hunger, sleepiness, age, bordedom, time, 
@@ -61,19 +71,24 @@ const game = {
 		const $sleepiness = $('#sleepiness');
 		const $boredom = $('#boredom');
 		$timer.text(`TIMER: ${this.time}s`)
-		$age.text(`AGE: ${this.theTama.age}`)
+		$age.text(`AGE: ${Math.floor(this.theTama.age)}`)
 		$hunger.text(`HUNGER: ${this.theTama.hunger.toFixed(1)}`)
-		$sleepiness.text(`SLEEPINES: ${this.theTama.sleepiness}`)
-		$boredom.text(`BOREDOM: ${this.theTama.boredom}`)
+		$sleepiness.text(`SLEEPINES: ${this.theTama.sleepiness.toFixed(1)}`)
+		$boredom.text(`BOREDOM: ${this.theTama.boredom.toFixed(1)}`)
+	},
+
+	feedTamagatchi(){
+		this.theTama.hunger -= .8;
+		this.printStats()
 	},
 
 	playWithTamagotchi(){
-		this.theTama.boredom -= .8;
+		this.theTama.boredom -= 1;
 		this.printStats()
 	},
 
 	goToSleepTamagotchi(){
-		this.theTama.sleepiness -= .4;
+		this.theTama.sleepiness -= .7;
 		// 	
 		// $('body').css()({
 		// 		'background-color' : 'white',
@@ -81,6 +96,7 @@ const game = {
 		// })
 	},
 	wakeUpTamagotchi(){
+		// this.printStats()
 		$('body').css({
 			'background-color': 'white',
 			'opacity': ''
@@ -93,12 +109,18 @@ const game = {
 	// 		// even bigger one
 	// 	}
 	// },
+
+	endGame() {
+		console.log("GAME OVER");
+		$('.crash-bored').attr("src", "crash-images/crash-sad.gif").css('top', '232px');
+	}
 }
 
 
 // Listeners
 $('form').on('submit', (e) => {
 	e.preventDefault();
+	$('form').hide()
 	// console.log('Clicked! Woo!');
 	console.log( $('#input-box').val() );
 	const tamaName = $('#input-box').val();
