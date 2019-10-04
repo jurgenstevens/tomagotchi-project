@@ -24,9 +24,9 @@ body{
   	width: 40px;
 	background-color: blue;
 	color: white;
-	position: absolute;
-	bottom: 174px;
-	left: 398px;
+	position: relative;
+	bottom: 88px;
+	right: 593px;
 }
 #playWithTamagotchi {
 	border-radius: 50%;
@@ -34,9 +34,9 @@ body{
   	width: 40px;
 	background-color: green;
 	color: white;
-	position: absolute;
-	bottom: 150px;
-	left: 473px;
+	position: relative;
+	bottom: 65px;
+	right: 561px;
 }
 #goToSleep {
 	border-radius: 50%;
@@ -44,9 +44,9 @@ body{
   	width: 40px;
 	background-color: black;
 	color: white;
-	position: absolute;
-	bottom: 174px;
-	left: 548px;
+	position: relative;
+	bottom: 88px;
+	right: 530px;
 	text-align: center;
 }
 #wakeUp{
